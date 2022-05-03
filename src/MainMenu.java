@@ -2,7 +2,7 @@
 
 public class MainMenu {
 
-    private void menu()
+    public void menu()
     {
         System.out.println("\nWelcome to MMKS");
         System.out.println("***********************************");
