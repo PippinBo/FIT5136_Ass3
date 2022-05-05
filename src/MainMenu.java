@@ -4,7 +4,7 @@ public class MainMenu {
 
     public void menu()
     {
-        System.out.println("\nWelcome to MMKS");
+        System.out.println("   Welcome to MMKS");
         System.out.println("***********************************");
         System.out.println("(1) Menu Order");
         System.out.println("(2) Meal recipes");
