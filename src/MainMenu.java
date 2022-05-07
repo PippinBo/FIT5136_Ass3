@@ -15,5 +15,8 @@ public class MainMenu {
         System.out.println("Please choose an option:");
     }
 
+    public void opiton1 (){
+
+    }
 
 }
