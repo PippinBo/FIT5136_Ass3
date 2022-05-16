@@ -1,16 +1,21 @@
+package Model;
+
 
 /**尝试读取txt文件中的菜谱内容，未完成**/
+import Entity.Meals;
+
 import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
-public class Mealsdatabase {
+public class MealsDatabase {
     public String name;
     public int price;
     public String time;
     private ArrayList<Meals> mealsList;
+    private int size;
     /**public static String mealsName;**/
 
-    public Mealsdatabase(){
+    public MealsDatabase(){
         mealsList = new ArrayList<Meals>();
     }
     /**display all meals**/
@@ -46,7 +51,9 @@ public class Mealsdatabase {
                     String title = tokens[0];
                     String author = tokens[1];
                     String rating = tokens[2];
-                    mealsList.add(new Meals(name, price, time));
+                    String what = tokens[3];
+                    String tag = tokens[4];
+                    mealsList.add(new Meals(name, price, time,size,tag));
                 }
 
             }

@@ -1,4 +1,4 @@
-
+package Controller;
 
 public class MainMenu {
 
@@ -11,6 +11,4 @@ public class MainMenu {
         System.out.println("(3) Log out");
         System.out.println("Please choose an option:");
     }
-
-
 }

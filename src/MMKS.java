@@ -1,33 +1,54 @@
+import Controller.MainMenu;
+import Controller.UserController;
+import Model.MealsDatabase;
+import Entity.User;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MMKS {
+
+    MainMenu mm = new MainMenu();
+    User user = new User();
+    UserController userController = new UserController();
+
     /**login方法**/
-    public void login(){
-        MMKS mmks = new MMKS();
-        MainMenu mm = new MainMenu();
-        User user = new User();
+    public boolean login(){
+        boolean flag = false;
         Scanner sc = new Scanner(System.in);
+        System.out.println("**************************");
         System.out.println("please enter your email.");
         String inputEmail = sc.next();
-        if (user.checkEmail(inputEmail)) {
-            System.out.println("please enter your password.");
-            String inputPassword = sc.next();
-            if (user.checkUserId(inputPassword, inputEmail)) {
-                mmks.showMenu();
+        System.out.println("**************************");
+        System.out.println("please enter your password.");
+        String inputPassword = sc.next();
+        try {
+            if (userController.checkUserLogin(inputEmail, inputPassword)) {
+                System.out.println("Login successful! ");
+                flag = true;
+                showMenu();
             }
+            else {
+                System.out.println("User password or email is wrong! Please enter again!");
+                login();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return flag;
     }
 
     /**显示主菜单方法**/
     public void showMenu(){
-        MainMenu mm = new MainMenu();
         mm.menu();
         while(true){
             Scanner sc = new Scanner(System.in);
             String option = sc.nextLine();
             switch(option){
                 case "1":
-                    Mealsdatabase ma = new Mealsdatabase();
+                    MealsDatabase ma = new MealsDatabase();
+
                     /**ma.readList();**/
                     System.out.println(ma.readList()); /**测试是否读取txt文件**/
                     break;
@@ -47,6 +68,7 @@ public class MMKS {
     }
 
     public void loginPage(){
+        System.out.println("**************************");
         System.out.println("   Welcome to MMKS   ");
         System.out.println("**************************");
         System.out.println("(1) Login system");
@@ -56,18 +78,18 @@ public class MMKS {
 
     /**主函数**/
     public static void main(String[] args) {
+        boolean flag = false;
         MMKS mmks = new MMKS();
-        MainMenu mm = new MainMenu();
-        User user = new User();
         mmks.loginPage();
-        while(true){
 
+        while(!flag){
             Scanner sc = new Scanner(System.in);
             String option = sc.nextLine();
             switch(option){
-                case "1":
-                    mmks.login();/**调用登录方法**/
+                case "1": /**调用登录方法**/
+                    mmks.login();
                     break;
+
                 case "2" :
                     System.out.println("USER SELECT 2");
                     System.out.println("GOOD BYE. THANK YOU!");
@@ -79,6 +101,5 @@ public class MMKS {
                     break;
             }
         }
-
     }
 }
