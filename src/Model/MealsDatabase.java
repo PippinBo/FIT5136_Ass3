@@ -2,7 +2,7 @@ package Model;
 
 
 /**尝试读取txt文件中的菜谱内容，未完成**/
-import Entity.Meals;
+import Entity.Meal;
 
 import java.io.*;
 import java.util.Scanner;
@@ -11,16 +11,16 @@ public class MealsDatabase {
     public String name;
     public int price;
     public String time;
-    private ArrayList<Meals> mealsList;
+    private ArrayList<Meal> mealsList;
     private int size;
     /**public static String mealsName;**/
 
     public MealsDatabase(){
-        mealsList = new ArrayList<Meals>();
+        mealsList = new ArrayList<Meal>();
     }
     /**display all meals**/
     public void displayAllMeals(){
-        for (Meals a : mealsList)
+        for (Meal a : mealsList)
         {
             System.out.println(a);
         }
@@ -29,7 +29,7 @@ public class MealsDatabase {
     public void displayAllMeals1()
     {
         int count = 0;
-        for (Meals a : mealsList)
+        for (Meal a : mealsList)
         {
             count ++;
             System.out.println(count + ". " + a);
@@ -53,7 +53,7 @@ public class MealsDatabase {
                     String rating = tokens[2];
                     String what = tokens[3];
                     String tag = tokens[4];
-                    mealsList.add(new Meals(name, price, time,size,tag));
+                    //mealsList.add(new Meal(name, price, time,size,tag));
                 }
 
             }

@@ -1,4 +1,4 @@
-import Controller.MainMenu;
+import View.MainMenu;
 import Controller.UserController;
 import Model.MealsDatabase;
 import Entity.User;
@@ -48,7 +48,6 @@ public class MMKS {
             switch(option){
                 case "1":
                     MealsDatabase ma = new MealsDatabase();
-
                     /**ma.readList();**/
                     System.out.println(ma.readList()); /**测试是否读取txt文件**/
                     break;
