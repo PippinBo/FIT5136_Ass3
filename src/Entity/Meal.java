@@ -98,14 +98,13 @@ public class Meal {
 
     @Override
     public String toString() {
-        return "Meal{" +
-                "name='" + name + '\'' + "\n" +
-                ", price=" + price + "\n" +
-                ", size=" + size + "\n" +
-                ", tag='" + tag + '\'' + "\n" +
-                ", id=" + id + "\n" +
-                ", steps=" + Arrays.toString(steps) + "\n" +
-                '}';
+        return
+                "\n" + "id: " + id + "\n" +
+                "name:'" + name + '\'' + "\n" +
+                "price: " + price + "\n" +
+                "size: " + size + "\n" +
+                "tag:'" + tag + '\'' + "\n" +
+                "steps: " + Arrays.toString(steps) + "\n";
     }
 }
 

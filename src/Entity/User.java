@@ -12,7 +12,7 @@ public class User {
     private String password;
     private String[] allergens;
     private String referral_code;
-    //private String ArrayList<meal> orderList;
+    private ArrayList<Meal> orderList;
     private ArrayList<User> allUsersList;
 
     public User() {}
@@ -97,8 +97,14 @@ public class User {
                 '}';
     }
 
+    public ArrayList<Meal> getOrderList() {
+        return orderList;
+    }
 
-//    public boolean checkEmail(String inputEmail){
+    public void setOrderList(ArrayList<Meal> orderList) {
+        this.orderList = orderList;
+    }
+    //    public boolean checkEmail(String inputEmail){
 //        boolean res = false;
 //        int index = inputEmail.lastIndexOf('@');
 //

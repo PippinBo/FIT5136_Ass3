@@ -40,7 +40,6 @@ public class MealController {
                     mealsList.add(meal);
                 }
             }
-            //System.out.println( "\n" + mealsList);
         }
         catch (IOException e) {
             System.out.println("Error: " + e);
@@ -50,7 +49,23 @@ public class MealController {
                 sc.close();
         }
         return mealsList;
+    }
 
+    public Meal searchMealById(int id) {
+        Meal resultMeal = null;
+        if (mealsList.isEmpty()) {
+            return null;
+        }
+        if (id <= 0) {
+            return null;
+        }
+        for (Meal m : mealsList) {
+            if (m.getId() == id) {
+                resultMeal = m;
+                break;
+            }
+        }
+        return resultMeal;
     }
 
     // file io 读数据
