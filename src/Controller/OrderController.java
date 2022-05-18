@@ -5,6 +5,7 @@ import Entity.Meal;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class OrderController {
@@ -80,6 +81,6 @@ public class OrderController {
     }
 
     public void orderSummary() {//此方法为将所有的meal放到这里列出来
-
+        System.out.println(resultMeals);
     }
 }
