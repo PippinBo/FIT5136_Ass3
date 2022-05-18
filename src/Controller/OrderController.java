@@ -32,15 +32,17 @@ public class OrderController {
             String option = sc.nextLine();
             switch (option) {
                 case "1":
-                    System.out.println(mealController.readMealFile(FilePath.currentFile));
+                    mealController.getMealList();
+                    System.out.println("Please choose your favourite meal!");
+                    int choice = sc.nextInt();
+                    addMealsById(choice, FilePath.currentFile);
                     flag = true;
                     break;
                 case "2":
-                    allMeals = mealController.readMealFile(FilePath.PreviousWeekFile);
-                    System.out.println(allMeals);
+                    mealController.getMealList();
                     System.out.println("Please choose your favourite meal!");
-                    int inputId = sc.nextInt();
-                    addMealsById(inputId);
+                    int choice2 = sc.nextInt();
+                    addMealsById(choice2, FilePath.PreviousWeekFile);
                     flag = true;
                     break;
                 case "3":
@@ -63,7 +65,8 @@ public class OrderController {
         }
     }
 
-    public ArrayList<Meal> addMealsById (int inputId) throws IOException {
+    public ArrayList<Meal> addMealsById (int inputId, String fileName) throws IOException {
+        allMeals = mealController.readMealFile(fileName);
         for (Meal m : allMeals) {
             if (m.getId() == inputId && inputId > 0) {
                 resultMeals.add(m);
@@ -74,5 +77,9 @@ public class OrderController {
         //System.out.println("This meal is not exist! Please input again!");
         System.out.println(resultMeals);
         return resultMeals;
+    }
+
+    public void orderSummary() {//此方法为将所有的meal放到这里列出来
+
     }
 }

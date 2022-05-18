@@ -71,14 +71,15 @@ public class MealController {
     // file io 读数据
     // 返回view显示
 
-//    public ArrayList<Meal> getMealList() {
-//
-//
-//    }
-//
+    public ArrayList<Meal> getMealList() {
+          return mealsList;
+    }
+
 //    public ArrayList<Meal> getAllMeals() {
 //
 //    }
+
+
 
     public static void main(String[] args) throws IOException {
         String mealFileName = "C:\\Users\\ROG\\IdeaProjects\\FIT5136_Ass3\\src\\Model\\MealsDB.txt";

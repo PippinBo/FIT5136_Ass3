@@ -1,6 +1,6 @@
 import View.MainMenu;
 import Controller.UserController;
-import Model.MealsDatabase;
+import Entity.MealsDatabase;
 import Entity.User;
 
 import java.io.IOException;

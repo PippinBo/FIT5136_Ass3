@@ -1,4 +1,4 @@
-package Model;
+package Entity;
 
 
 /**尝试读取txt文件中的菜谱内容，未完成**/
