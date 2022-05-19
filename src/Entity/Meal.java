@@ -7,6 +7,16 @@ public class Meal {
     private String name;
     private double price;
     private int size;
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     private String tag;
     private int id;
     private String[] steps;
@@ -19,6 +29,7 @@ public class Meal {
         price = 0;
         id = 0;
         size = 0;
+        time = "";
         /**cookMethods = "unknown";**/
         tag = "";
         steps = null;
@@ -40,12 +51,13 @@ public class Meal {
         this.steps = steps;
     }
 
-    public Meal(int id, String name, double price, int size, String tag, String[] steps){
+    public Meal(int id, String name, double price, int size, String time,String tag, String[] steps){
         /**this.id = id;**/
         this.name = name;
         this.price = price;
         this.id = id;
         this.size = size;
+        this.time = time;
         this.tag = tag;
         this.steps = steps;
         /**this.cookMethods = cookMethods;**/
@@ -99,12 +111,13 @@ public class Meal {
     @Override
     public String toString() {
         return
-                "\n" + "id: " + id + "\n" +
-                "name:'" + name + '\'' + "\n" +
-                "price: " + price + "\n" +
-                "size: " + size + "\n" +
-                "tag:'" + tag + '\'' + "\n" +
-                "steps: " + Arrays.toString(steps) + "\n";
+                "Id:" + id + "." + "\t" +
+                "Name:" + name + "." + "\t" +
+                "Price:" + price + "." + "\t" +
+                "Time:" + time + "." + "\t" +
+                "Size:" + size + "." + "\t" +
+                "Tag:" + tag + "." + "\t" +
+                "Steps:" + Arrays.toString(steps) + "\n";
     }
 }
 

@@ -12,6 +12,9 @@ public class MMKS {
     User user = new User();
     UserController userController = new UserController();
 
+    public MMKS() {
+    }
+
     /**login方法**/
     public boolean login(){
         boolean flag = false;
@@ -44,16 +47,16 @@ public class MMKS {
         mm.menu();
         while(true){
             Scanner sc = new Scanner(System.in);
-            String option = sc.nextLine();
+            int option = sc.nextInt();
             switch(option){
-                case "1":
+                case 1:
                     MealsDatabase ma = new MealsDatabase();
                     /**ma.readList();**/
                     System.out.println(ma.readList()); /**测试是否读取txt文件**/
                     break;
-                case "2":
+                case 2:
                     break;
-                case "3":
+                case 3:
                     System.out.println("USER SELECT 3");
                     System.out.println("GOOD BYE. THANK YOU!");
                     System.exit(3);

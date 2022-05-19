@@ -16,6 +16,9 @@ public class MainMenu {
     MealController mealController = new MealController();
     private ArrayList<Meal> allMenus = new ArrayList<Meal>();
 
+    public MainMenu() {
+    }
+
     public void menu()
     {
         System.out.println("Welcome to MMKS");

@@ -16,6 +16,7 @@ public class MealController {
     private FileReader fileReader;
     private ArrayList<Meal> mealsList = new ArrayList<Meal>();
 
+
     public MealController() {}
 
     public ArrayList<Meal> readMealFile (String fileName) throws IOException {
@@ -27,16 +28,17 @@ public class MealController {
                 String line = sc.nextLine();
                 String[] values = line.split(",");
                 String[] steps = new String[3];
-                if (values.length == 8) {
+                if (values.length == 9) {
                     int id = Check.StringToInt(values[0]);
                     String name = values[1];
                     double price = Check.StringToDouble(values[2]);
                     int size = Check.StringToInt(values[3]);
-                    String tag = values[4];
-                    steps[0] = values[5];
-                    steps[1] = values[6];
-                    steps[2] = values[7];
-                    Meal meal = new Meal(id,name,price,size,tag,steps);
+                    String time = values[4];
+                    String tag = values[5];
+                    steps[0] = values[6];
+                    steps[1] = values[7];
+                    steps[2] = values[8];
+                    Meal meal = new Meal(id,name,price,size,time,tag,steps);
                     mealsList.add(meal);
                 }
             }
@@ -48,7 +50,7 @@ public class MealController {
             if (sc != null)
                 sc.close();
         }
-        return mealsList;
+        return this.mealsList;
     }
 
     public Meal searchMealById(int id) {
@@ -72,18 +74,10 @@ public class MealController {
     // 返回view显示
 
     public ArrayList<Meal> getMealList() {
-          return mealsList;
+        return this.mealsList;
     }
 
-//    public ArrayList<Meal> getAllMeals() {
-//
-//    }
-
-
-
-    public static void main(String[] args) throws IOException {
-        String mealFileName = "C:\\Users\\ROG\\IdeaProjects\\FIT5136_Ass3\\src\\Model\\MealsDB.txt";
-        MealController mealController = new MealController();
-        mealController.readMealFile(mealFileName);
+    public void showAllMeals() {
+        System.out.println(mealsList);
     }
 }
